@@ -27,6 +27,7 @@ namespace Model
 
         public int Conteo()
         {
+            return 25;   
         }
     }
 }
