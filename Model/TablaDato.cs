@@ -24,5 +24,9 @@ namespace Model
         public string Descripcion { get; set; }
 
         public int Orden { get; set; }
+
+        public int Conteo()
+        {
+        }
     }
 }
