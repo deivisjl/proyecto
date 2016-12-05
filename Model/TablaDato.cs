@@ -5,6 +5,7 @@ namespace Model
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
+    using System.Data.Entity;
 
     [Table("TablaDato")]
     public partial class TablaDato
@@ -25,9 +26,23 @@ namespace Model
 
         public int Orden { get; set; }
 
-        public int Conteo()
+        public List<TablaDato> Listar(string relacion)
         {
-            return 25;   
+            var datos = new List<TablaDato>();
+            try
+            {
+                using(var ctx = new ProyectoContext()){
+                datos = ctx.TablaDato.OrderBy(x => x.Orden)
+                             .Where(x => x.Relacion == relacion)
+                             .ToList();
+            }
+            }
+            catch (Exception)
+            {
+                
+                throw;
+            }
+            return datos;
         }
     }
 }
