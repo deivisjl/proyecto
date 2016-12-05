@@ -7,3 +7,5 @@ C:\Curso_MVC_Portafolio\proyecto\proyecto\Model\bin\Debug\EntityFramework.xml
 C:\Curso_MVC_Portafolio\proyecto\proyecto\Model\bin\Debug\EntityFramework.SqlServer.xml
 C:\Curso_MVC_Portafolio\proyecto\proyecto\Model\obj\Debug\Model.dll
 C:\Curso_MVC_Portafolio\proyecto\proyecto\Model\obj\Debug\Model.pdb
+C:\Curso_MVC_Portafolio\proyecto\proyecto\Model\bin\Debug\Helper.dll
+C:\Curso_MVC_Portafolio\proyecto\proyecto\Model\bin\Debug\Helper.pdb

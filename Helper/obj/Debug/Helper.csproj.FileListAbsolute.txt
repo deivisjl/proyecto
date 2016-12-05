@@ -1,0 +1,5 @@
+C:\Curso_MVC_Portafolio\proyecto\proyecto\Helper\bin\Debug\Helper.dll
+C:\Curso_MVC_Portafolio\proyecto\proyecto\Helper\bin\Debug\Helper.pdb
+C:\Curso_MVC_Portafolio\proyecto\proyecto\Helper\obj\Debug\Helper.dll
+C:\Curso_MVC_Portafolio\proyecto\proyecto\Helper\obj\Debug\Helper.pdb
+C:\Curso_MVC_Portafolio\proyecto\proyecto\Helper\obj\Debug\Helper.csprojResolveAssemblyReference.cache
