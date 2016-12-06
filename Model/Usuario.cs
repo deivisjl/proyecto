@@ -5,8 +5,12 @@ namespace Model
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
+    using System.Data.Entity;
     using System.Data.Entity.Spatial;
+    using System.Data.Entity.Validation;
+    using System.IO;
     using System.Linq;
+    using System.Web;
 
     [Table("Usuario")]
     public partial class Usuario
@@ -111,6 +115,49 @@ namespace Model
                 throw;
             }
             return usuario;
+        }
+        public ResponseModel Guardar (HttpPostedFileBase Foto)
+        {
+            var rm = new ResponseModel();
+            try
+            {
+                using (var ctx = new ProyectoContext())
+                {
+                    ctx.Configuration.ValidateOnSaveEnabled = false;
+
+                    var eUsuario = ctx.Entry(this);
+                    eUsuario.State = EntityState.Modified;
+
+                    if (Foto != null)
+                    {
+                        string archivo = DateTime.Now.ToString("yyyyMMddHHmmss") + Path.GetExtension(Foto.FileName);
+                        Foto.SaveAs(HttpContext.Current.Server.MapPath("~/Uploads/" + archivo));
+                        this.Foto = archivo;
+                    }
+                    else
+                    {
+                        eUsuario.Property(x => x.Foto).IsModified = false;
+
+                    }
+                    if (this.Password == null)
+                    {
+                        eUsuario.Property(x => x.Password).IsModified = false;
+                    }
+
+                    ctx.SaveChanges();
+                    rm.SetResponse(true);
+                       
+                }
+            }
+            catch (DbEntityValidationException e)
+            {
+                throw;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return rm;
         }
     }
 }

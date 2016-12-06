@@ -23,7 +23,8 @@ namespace proyecto.Areas.Admin.Controllers
 
         public JsonResult Listar(AnexGRID grid, int tipo)
         {
-            return Json(experiencia.Listar(grid, tipo, SessionHelper.GetUser()));
+            return null;
+            //return Json(experiencia.Listar(grid, tipo, SessionHelper.GetUser()));
         }
 
         public ActionResult Crud(byte tipo = 0, int id = 0)
@@ -34,7 +35,7 @@ namespace proyecto.Areas.Admin.Controllers
                 experiencia.Tipo = tipo;
                 experiencia.Usuario_id = SessionHelper.GetUser();
             }
-            else experiencia = experiencia.Obtener(id);
+           // else experiencia = experiencia.Obtener(id);
 
             return View(experiencia);
         }
@@ -45,7 +46,7 @@ namespace proyecto.Areas.Admin.Controllers
 
             if (ModelState.IsValid)
             {
-                rm = model.Guardar();
+               // rm = model.Guardar();
 
                 if (rm.response)
                 {
@@ -58,7 +59,8 @@ namespace proyecto.Areas.Admin.Controllers
 
         public JsonResult Eliminar(int id)
         {
-            return Json(experiencia.Eliminar(id));
+            //return Json(experiencia.Eliminar(id));
+            return null;
         }
     }
 }

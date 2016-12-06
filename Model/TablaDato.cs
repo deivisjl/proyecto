@@ -1,11 +1,15 @@
 namespace Model
 {
+    using Helper;
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
     using System.Data.Entity;
+    using System.Data.Entity.Validation;
+    using System.Web;
+    using System.Linq;
 
     [Table("TablaDato")]
     public partial class TablaDato
@@ -29,12 +33,13 @@ namespace Model
         public List<TablaDato> Listar(string relacion)
         {
             var datos = new List<TablaDato>();
+            
             try
             {
                 using(var ctx = new ProyectoContext()){
-                datos = ctx.TablaDato.OrderBy(x => x.Orden)
-                             .Where(x => x.Relacion == relacion)
-                             .ToList();
+                    datos = ctx.TablaDato.OrderBy(x => x.Orden)
+                                         .Where(x => x.Relacion == relacion)
+                                         .ToList();
             }
             }
             catch (Exception)

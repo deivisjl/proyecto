@@ -26,7 +26,7 @@ namespace proyecto.Areas.Admin.Controllers
 
             if (rm.response) 
             {
-                rm.href = Url.Content("~/admin/usuario");
+                rm.href = Url.Content("~/Admin/Usuario");
             }
 
             return Json(rm);

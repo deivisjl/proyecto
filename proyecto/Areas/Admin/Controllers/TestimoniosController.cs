@@ -21,12 +21,14 @@ namespace proyecto.Areas.Admin.Controllers
 
         public JsonResult Listar(AnexGRID grid)
         {
-            return Json(testimonio.Listar(grid, SessionHelper.GetUser()));
+            return null;
+            //return Json(testimonio.Listar(grid, SessionHelper.GetUser()));
         }
 
         public ActionResult Crud(int id)
         {
-            return View(testimonio.Obtener(id));
+           // return View(testimonio.Obtener(id));
+            return null;
         }
 
         public JsonResult Guardar(Testimonio model)
@@ -35,7 +37,7 @@ namespace proyecto.Areas.Admin.Controllers
 
             if (ModelState.IsValid)
             {
-                rm = model.Guardar();
+               // rm = model.Guardar();
 
                 if (rm.response)
                 {
@@ -48,7 +50,8 @@ namespace proyecto.Areas.Admin.Controllers
 
         public JsonResult Eliminar(int id)
         {
-            return Json(testimonio.Eliminar(id));
+           // return Json(testimonio.Eliminar(id));
+            return null;
         }
     }
 }

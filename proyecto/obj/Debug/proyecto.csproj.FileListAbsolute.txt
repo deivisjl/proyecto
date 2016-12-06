@@ -28,3 +28,5 @@ C:\Curso_MVC_Portafolio\proyecto\proyecto\proyecto\bin\es\System.Web.Helpers.res
 C:\Curso_MVC_Portafolio\proyecto\proyecto\proyecto\bin\es\System.Web.Mvc.resources.dll
 C:\Curso_MVC_Portafolio\proyecto\proyecto\proyecto\obj\Debug\proyecto.dll
 C:\Curso_MVC_Portafolio\proyecto\proyecto\proyecto\obj\Debug\proyecto.pdb
+C:\Curso_MVC_Portafolio\proyecto\proyecto\proyecto\bin\Helper.dll
+C:\Curso_MVC_Portafolio\proyecto\proyecto\proyecto\bin\Helper.pdb

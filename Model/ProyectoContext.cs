@@ -20,7 +20,7 @@ namespace Model
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Experiencia>()
+          /*  modelBuilder.Entity<Experiencia>()
                 .Property(e => e.Nombre)
                 .IsUnicode(false);
 
@@ -114,7 +114,7 @@ namespace Model
 
             modelBuilder.Entity<Usuario>()
                 .Property(e => e.Foto)
-                .IsUnicode(false);
+                .IsUnicode(false);*/
 
             modelBuilder.Entity<Usuario>()
                 .HasMany(e => e.Experiencia)

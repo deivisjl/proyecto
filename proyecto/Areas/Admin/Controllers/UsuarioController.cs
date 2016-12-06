@@ -32,6 +32,10 @@ namespace proyecto.Areas.Admin.Controllers
             {
                 rm = model.Guardar(Foto);
             }
+            if (rm.response)
+            {
+                rm.href = Url.Content("~/Admin/Usuario");
+            }
 
             return Json(rm);
         }

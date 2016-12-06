@@ -12,9 +12,6 @@ namespace proyecto.Controllers
         private TablaDato tablaDato = new TablaDato();
         //
         // GET: /Default/
-        public int Index()
-        {
-            return tablaDato.Conteo();
-        }
+        
 	}
 }

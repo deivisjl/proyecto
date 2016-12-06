@@ -30,5 +30,6 @@ namespace Model
         public string Fecha { get; set; }
 
         public virtual Usuario Usuario { get; set; }
+
     }
 }
