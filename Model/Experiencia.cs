@@ -99,7 +99,7 @@ namespace Model
             return rm;
         }
 
-        public AnexGRIDResponde Listar(AnexGRID grid, int tipo)
+        public AnexGRIDResponde Listar(AnexGRID grid, int tipo, int usuario_id)
         {
             try
             {
@@ -108,7 +108,8 @@ namespace Model
                     ctx.Configuration.LazyLoadingEnabled = false;
 
                     grid.Inicializar();
-                    var query = ctx.Experiencia.Where(x => x.Tipo == tipo);
+                    var query = ctx.Experiencia.Where(x => x.Tipo == tipo)
+                                               .Where(x => x.Usuario_id == usuario_id);
 
                     if (grid.columna == "id")
                     {

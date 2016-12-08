@@ -9,9 +9,10 @@ namespace proyecto.Controllers
 {
     public class DefaultController : Controller
     {
-        private TablaDato tablaDato = new TablaDato();
-        //
-        // GET: /Default/
+        public ActionResult Index()
+        {
+            return View();
+        }
         
 	}
 }

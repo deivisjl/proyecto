@@ -21,14 +21,14 @@ namespace proyecto.Areas.Admin.Controllers
 
         public JsonResult Listar(AnexGRID grid)
         {
-           // return Json(habilidad.Listar(grid, SessionHelper.GetUser()));
-            return null;
+            return Json(habilidad.Listar(grid, SessionHelper.GetUser()));
+            
         }
 
         public ActionResult Crud(int id = 0)
         {
             if (id == 0) habilidad.Usuario_id = SessionHelper.GetUser();
-           // else habilidad = habilidad.Obtener(id);
+            else habilidad = habilidad.Obtener(id);
 
             return View(habilidad);
         }
@@ -39,7 +39,7 @@ namespace proyecto.Areas.Admin.Controllers
 
             if (ModelState.IsValid)
             {
-                //rm = model.Guardar();
+                rm = model.Guardar();
 
                 if (rm.response)
                 {
@@ -52,8 +52,7 @@ namespace proyecto.Areas.Admin.Controllers
 
         public JsonResult Eliminar(int id)
         {
-            return null;
-            //return Json(habilidad.Eliminar(id));
+            return Json(habilidad.Eliminar(id));
         }
     }
 }
