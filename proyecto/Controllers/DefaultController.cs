@@ -7,6 +7,7 @@ using System.Web.Mvc;
 using proyecto.App_Start;
 using proyecto.ViewModels;
 using System.Net.Mail;
+using Rotativa.MVC;
 
 namespace proyecto.Controllers
 {
@@ -35,11 +36,11 @@ namespace proyecto.Controllers
                 mail.IsBodyHtml = true;
                 mail.Body = model.Mensaje;
 
-                var SmtpServer = new SmtpClient("smtp.live.com");
+                var SmtpServer = new SmtpClient("smtp.gmail.com");
                 SmtpServer.Port = 587;
                 SmtpServer.DeliveryMethod = SmtpDeliveryMethod.Network;
                 SmtpServer.UseDefaultCredentials = false;
-                SmtpServer.Credentials = new System.Net.NetworkCredential("deivisjl@gmail.com","(Dvsjslpzprz91");
+                SmtpServer.Credentials = new System.Net.NetworkCredential("deivisjl@gmail.com","(Dvsjslpzprz91)");
                 SmtpServer.EnableSsl = true;
                 SmtpServer.Send(mail);
                 }
@@ -53,6 +54,18 @@ namespace proyecto.Controllers
                 rm.function = "CerrarContacto()";
             }
             return Json(rm);
+        }
+
+        public ActionResult ExportaAPDF()
+        {
+            return new Rotativa.MVC.ActionAsPdf("PDF");
+            
+        }
+        public ActionResult PDF()
+        {
+            return View(
+                    usuario.Obtener(FrontOfficeStartup.UsuarioVisualizando(),true)
+                );
         }
         
 	}
